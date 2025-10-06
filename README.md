@@ -101,4 +101,4 @@ Tasks
 
 - [ ] Set up CI/CD pipelines for build, test, and deployment.
 
-- [] Write comprehensive documentation and user guides.
+- [ ] Write comprehensive documentation and user guides.
