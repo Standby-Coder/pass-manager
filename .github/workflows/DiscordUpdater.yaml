@@ -1,0 +1,165 @@
+name: Notify Discord on PR and Comments
+
+on:
+  pull_request:
+    types: [opened, reopened, closed]
+  pull_request_review:
+    types: [submitted, dismissed] # submitted for review comments, dismissed for resolves
+  pull_request_review_comment:
+    types: [created, edited, deleted]
+  issue_comment:
+    types: [created, edited, deleted]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout PR code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get changed files (max 10 + 'and more...')
+        if: github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'reopened')
+        id: files
+        run: |
+          git fetch origin ${{ github.event.pull_request.base.ref }}
+          FILES=$(git diff --name-only origin/${{ github.event.pull_request.base.ref }}...HEAD || true)
+          FILE_COUNT=$(echo "$FILES" | wc -l)
+
+          DISPLAY_FILES=$(echo "$FILES" | head -n 10 | sed 's/^/- /')
+          if [ "$FILE_COUNT" -gt 10 ]; then
+            DISPLAY_FILES="${DISPLAY_FILES}\n...and more."
+          fi
+
+          echo "CHANGED_FILES<<EOF" >> $GITHUB_ENV
+          echo -e "$DISPLAY_FILES" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+
+      - name: Send Discord Message
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          REPO_NAME: ${{ github.repository }}
+          REPO_URL: https://github.com/${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number || github.event.issue.number }}
+          PR_TITLE: ${{ github.event.pull_request.title || github.event.issue.title }}
+          PR_URL: ${{ github.event.pull_request.html_url || github.event.issue.html_url }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login || github.event.issue.user.login }}
+          PR_AVATAR: ${{ github.event.pull_request.user.avatar_url || github.event.issue.user.avatar_url }}
+          FROM_BRANCH: ${{ github.event.pull_request.head.ref || '' }}
+          TO_BRANCH: ${{ github.event.pull_request.base.ref || '' }}
+          ADDITIONS: ${{ github.event.pull_request.additions || 0 }}
+          DELETIONS: ${{ github.event.pull_request.deletions || 0 }}
+          CHANGED_FILES: ${{ env.CHANGED_FILES || '' }}
+          PR_BODY: ${{ github.event.pull_request.body || '' }}
+          COMMENT_BODY: ${{ github.event.comment.body || '' }}
+          COMMENT_AUTHOR: ${{ github.event.comment.user.login || '' }}
+          COMMENT_URL: ${{ github.event.comment.html_url || '' }}
+          REVIEW_STATE: ${{ github.event.review.state || '' }}
+          ACTION: ${{ github.event.action }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          set -e
+
+          # Helper to JSON escape message for curl safely
+          json_escape() {
+            python3 -c "import json,sys; print(json.dumps(sys.stdin.read()))"
+          }
+
+          # Compose message based on event type
+          if [[ "$EVENT_NAME" == "pull_request" ]]; then
+            if [[ "$ACTION" == "opened" || "$ACTION" == "reopened" ]]; then
+              # Truncate and sanitize PR body
+              SAFE_BODY=$(echo "$PR_BODY" | head -c 1000 | sed 's/`/`'"'"'`/g' | sed 's/\r//g')
+
+              MESSAGE="**@everyone**
+          **New Pull Request Created!**
+
+          **Repository:** [${REPO_NAME}](${REPO_URL})
+          **Title:** [${PR_TITLE}](${PR_URL})
+          **Author:** ${PR_AUTHOR}
+          **Branches:** \`${FROM_BRANCH}\` → \`${TO_BRANCH}\`
+          **Line Changes:** +${ADDITIONS} / -${DELETIONS}
+
+          **Files Changed (max 10):**
+          ${CHANGED_FILES}
+
+          **PR Body:**
+          ${SAFE_BODY}"
+
+            elif [[ "$ACTION" == "closed" ]]; then
+              if [[ "${{ github.event.pull_request.merged }}" == "true" ]]; then
+                MESSAGE="**@everyone**\n**Pull Request Merged!**\n\n"\
+          "**Repository:** [${REPO_NAME}](${REPO_URL})\n"\
+          "**Title:** [${PR_TITLE}](${PR_URL})\n"\
+          "**Author:** ${PR_AUTHOR}\n"\
+          "**Branches:** \`${FROM_BRANCH}\` → \`${TO_BRANCH}\`"
+                        else
+                          MESSAGE="**Pull Request Closed (not merged)**\n"\
+          "**Repository:** [${REPO_NAME}](${REPO_URL})\n"\
+          "**Title:** [${PR_TITLE}](${PR_URL})"
+              fi
+            else
+              echo "No notification for this pull_request action: $ACTION"
+              exit 0
+            fi
+
+          elif [[ "$EVENT_NAME" == "issue_comment" ]]; then
+            # Only process comments on pull requests (issues + PRs share namespace)
+            if [[ "${{ github.event.issue.pull_request }}" == "" ]]; then
+              echo "Comment is not on a PR, skipping"
+              exit 0
+            fi
+                MESSAGE="**New Comment on PR #${PR_NUMBER}**
+          **Repository:** [${REPO_NAME}](${REPO_URL})
+          **Comment Author:** ${COMMENT_AUTHOR}
+          **Comment:**
+          ${COMMENT_BODY}
+
+          **Link:** ${COMMENT_URL}"
+
+          elif [[ "$EVENT_NAME" == "pull_request_review_comment" ]]; then
+            MESSAGE="**New Review Comment on PR #${PR_NUMBER}**
+          **Repository:** [${REPO_NAME}](${REPO_URL})
+          **Comment Author:** ${COMMENT_AUTHOR}
+          **Comment:**
+          ${COMMENT_BODY}
+
+          **Link:** ${COMMENT_URL}"
+
+          elif [[ "$EVENT_NAME" == "pull_request_review" ]]; then
+            # Review can be approved, changes_requested, dismissed
+            if [[ "$REVIEW_STATE" == "dismissed" ]]; then
+              MESSAGE="**Review Dismissed on PR #${PR_NUMBER}**
+          **Repository:** [${REPO_NAME}](${REPO_URL})
+          **Reviewer:** ${COMMENT_AUTHOR}
+          **Link:** ${PR_URL}"
+            else
+              # For submitted reviews (approve/request changes/comment)
+              MESSAGE="**Review Submitted on PR #${PR_NUMBER}**
+          **Repository:** [${REPO_NAME}](${REPO_URL})
+          **Reviewer:** ${COMMENT_AUTHOR}
+          **Review State:** ${REVIEW_STATE}
+
+          **Link:** ${PR_URL}"
+            fi
+
+          else
+            echo "Unhandled event: $EVENT_NAME"
+            exit 0
+          fi
+
+          # Escape JSON string
+          ESCAPED_MESSAGE=$(echo "$MESSAGE" | json_escape)
+
+          # Send webhook
+          response=$(curl -s -w "%{http_code}" -H "Content-Type: application/json" -X POST -d "{\"content\": $ESCAPED_MESSAGE}" "$DISCORD_WEBHOOK")
+          http_code="${response: -3}"
+          body="${response:0:-3}"
+
+          echo "HTTP Status: $http_code"
+          if [[ "$http_code" != "204" ]]; then
+            echo "Failed to send Discord message: $body"
+            exit 1
+          fi
