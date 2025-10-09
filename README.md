@@ -1,5 +1,4 @@
-# pass-manager
-Password Manager
+# Password Manager using Rust
 
 ## Roadmap: Password Manager with React.js + Rust + MySQL
 ### Phase 1: Project Setup & Core MVP
