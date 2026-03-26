@@ -1,60 +1,70 @@
-# Password Manager using Rust
+# Password Manager using Go
 
-## Roadmap: Password Manager with React.js + Rust + MySQL
+## Stack Summary
+
+- **Frontend:** React
+- **Backend:** Go with Gin
+- **ORM:** GORM
+- **Database:** SQLite using the GORM SQLite driver
+
+## Roadmap: Password Manager with React + Go + SQLite
+
 ### Phase 1: Project Setup & Core MVP
 #### Objectives
 
 - Establish basic infrastructure.
 - Implement secure user signup/login.
-- Basic password vault CRUD with encryption.
+- Build a basic password vault CRUD flow with secure storage foundations.
 
 #### Tasks
 
-- [ ] Set up React frontend project (e.g., Vite or Create React App).
+- [ ] Set up React frontend project.
 
-- [ ] Set up Rust backend project with chosen framework (Actix-web or Rocket).
+- [ ] Set up Go backend project with Gin.
 
-- [ ] Design MySQL database schema for users and password entries.
+- [ ] Design SQLite database schema for users and password entries.
 
-- [ ] Implement user registration with password hashing (Argon2 recommended).
+- [ ] Configure GORM with the SQLite driver.
+
+- [ ] Implement user registration with password hashing.
 
 - [ ] Implement login with JWT-based authentication.
 
 - [ ] Build API endpoints for CRUD operations on password entries.
 
-- [ ] Encrypt password fields server-side using a key derived from master password.
+- [ ] Define secure handling for sensitive password fields in the backend.
 
 - [ ] Create React UI to add/view/delete password entries.
 
-- [ ] Implement basic client-server communication over HTTPS.
+- [ ] Implement basic client-server communication.
 
 - [ ] Test end-to-end user signup, login, and password entry management.
 
 ### Phase 2: Security Hardening & UX Enhancements
 #### Objectives
 
-- Strengthen security around encryption and auth.
+- Strengthen security around data handling and authentication.
 - Improve frontend experience.
 
 #### Tasks
 
-- [ ] Implement client-side encryption/decryption of passwords using WebCrypto API.
+- [ ] Implement client-side protection for sensitive credential workflows where appropriate.
 
-- [ ] Add password strength meter and password generator on frontend.
+- [ ] Add password strength meter and password generator on the frontend.
 
-- [ ] Secure API routes with proper authentication middleware.
+- [ ] Secure API routes with proper Gin authentication middleware.
 
-- [ ] Implement logout on inactivity & token expiration.
+- [ ] Implement logout on inactivity and token expiration.
 
-- [ ] Implement password reset flow with secure email verification.
+- [ ] Implement password reset flow.
 
-- [ ] Sanitize and validate all user inputs (prevent XSS, SQL injection).
+- [ ] Sanitize and validate all user inputs.
 
-- [ ] Add search and filter capabilities in password vault UI.
+- [ ] Add search and filter capabilities in the password vault UI.
 
-- [ ] Implement “show/hide password” toggle securely.
+- [ ] Implement a secure show/hide password toggle.
 
-- [ ] Write unit tests for backend authentication and encryption modules.
+- [ ] Write unit tests for backend authentication and data protection modules.
 
 ### Phase 3: Syncing & Backup
 #### Objectives
@@ -64,15 +74,15 @@
 
 #### Tasks
 
-- [ ] Create secure sync API endpoints supporting encrypted data blobs.
+- [ ] Create secure sync API endpoints supporting protected data payloads.
 
-- [ ] Implement client-side caching (IndexedDB or secure local storage).
+- [ ] Implement client-side caching or local persistence for offline-friendly access.
 
-- [ ] Build encrypted vault export/import functionality.
+- [ ] Build vault export/import functionality.
 
 - [ ] Design and implement conflict resolution for syncing.
 
-- [ ] Implement multi-factor authentication (MFA) with TOTP or email.
+- [ ] Implement multi-factor authentication support.
 
 - [ ] Add integration tests covering sync and MFA flows.
 
@@ -82,22 +92,22 @@
 - Add advanced usability and security features.
 - Prepare for production deployment.
 
-Tasks
+#### Tasks
 
-- [ ] Add biometric login support on compatible devices (e.g., WebAuthn). (need to check)
+- [ ] Add biometric login support on compatible devices.
 
-- [ ] Integrate breach detection APIs (e.g., HaveIBeenPwned) for passwords.
+- [ ] Add password breach-checking capability if included in scope.
 
-- [ ] Add secure notes and file attachments with encryption.
+- [ ] Add secure notes and file attachments support.
 
-- [ ] Build shared vaults with role-based access control (optional)
+- [ ] Build shared vaults with role-based access control.
 
-- [ ] Harden backend with rate limiting, account lockout, and audit logging.
+- [ ] Harden the Go backend with rate limiting, account lockout, and audit logging.
 
-- [ ] Perform penetration testing and vulnerability assessments.
+- [ ] Perform security testing and vulnerability assessments.
 
 - [ ] Optimize frontend UI responsiveness and accessibility.
 
-- [ ] Set up CI/CD pipelines for build, test, and deployment.
+- [ ] Set up build, test, and deployment workflows.
 
 - [ ] Write comprehensive documentation and user guides.
