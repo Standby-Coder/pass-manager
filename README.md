@@ -18,27 +18,27 @@
 
 #### Tasks
 
-- [ ] Set up React frontend project.
+- [x] Set up React frontend project.
 
-- [ ] Set up Go backend project with Gin.
+- [x] Set up Go backend project with Gin.
 
-- [ ] Design SQLite database schema for users and password entries.
+- [x] Design SQLite database schema for users and password entries.
 
-- [ ] Configure GORM with the SQLite driver.
+- [x] Configure GORM with the SQLite driver.
 
-- [ ] Implement user registration with password hashing.
+- [x] Implement user registration with password hashing.
 
-- [ ] Implement login with JWT-based authentication.
+- [x] Implement login with JWT-based authentication.
 
-- [ ] Build API endpoints for CRUD operations on password entries.
+- [x] Build API endpoints for CRUD operations on password entries.
 
-- [ ] Define secure handling for sensitive password fields in the backend.
+- [x] Define secure handling for sensitive password fields in the backend.
 
-- [ ] Create React UI to add/view/delete password entries.
+- [x] Create React UI to add/view/delete password entries.
 
-- [ ] Implement basic client-server communication.
+- [x] Implement basic client-server communication.
 
-- [ ] Test end-to-end user signup, login, and password entry management.
+- [x] Test end-to-end user signup, login, and password entry management.
 
 ### Phase 2: Security Hardening & UX Enhancements
 #### Objectives
@@ -48,43 +48,66 @@
 
 #### Tasks
 
-- [ ] Implement client-side protection for sensitive credential workflows where appropriate.
+- [x] Enable configurable registration security like password length, complexity, and max failed logon attempts and locking accounts based on it
 
-- [ ] Add password strength meter and password generator on the frontend.
+- [x] Implement client-side protection for sensitive credential workflows where appropriate.
 
-- [ ] Secure API routes with proper Gin authentication middleware.
+- [x] Add password strength meter on the frontend.
 
-- [ ] Implement logout on inactivity and token expiration.
+- [x] Implement a lightweight strong password generator satisfying the configured security settings
 
-- [ ] Implement password reset flow.
+- [x] Secure API routes with proper Gin authentication middleware.
 
-- [ ] Sanitize and validate all user inputs.
+- [x] Implement logout on inactivity and token expiration.
 
-- [ ] Add search and filter capabilities in the password vault UI.
+- [x] Implement password reset flow.
 
-- [ ] Implement a secure show/hide password toggle.
+- [x] Sanitize and validate all user inputs.
 
-- [ ] Write unit tests for backend authentication and data protection modules.
+- [x] Add search and filter capabilities in the password vault UI.
+
+- [x] Implement a secure show/hide password toggle.
+
+- [x] Write unit tests for backend authentication and data protection modules.
+
+- [x] Check for all security issues and solve all issues.
 
 ### Phase 3: Syncing & Backup
 #### Objectives
 
-- Enable secure multi-device syncing.
-- Implement secure backup/export/import.
+- [x] Enable secure multi-device syncing.
+
+- [x] Implement secure backup/export/import.
+
+- [x] Use viper package (and other packages from spf13) for the application
+
+- [x] Make sure the sqlite db is encrypted so that no one can open the database using the sqlite3 command.
+
+- [x] Add a flag which decrypts the entire sqlite db into a json format.
+
+- [x] Make sure the saved/stored passwords are encrypted, so that even if they decrypted using external methods other than the flag cannot make sense of it. Only if the decrypt flag (created as per the previous point) is used, the password should be visible.
+
+- [x] Run another round of sanity test/integration test with all the requirements to be fulfilled, verified and completed
 
 #### Tasks
 
-- [ ] Create secure sync API endpoints supporting protected data payloads.
+- [x] Make this a portable web app such that it can be accessed offline with limited access such as getting passwords for last 10 added entries for only one user.
 
-- [ ] Implement client-side caching or local persistence for offline-friendly access.
+- [x] Make an instance admin account which is the only account which sets all configurable parameters.
 
-- [ ] Build vault export/import functionality.
+- [x] Create secure sync API endpoints supporting protected data payloads.
 
-- [ ] Design and implement conflict resolution for syncing.
+- [x] Implement client-side caching or local persistence for offline-friendly access, if possible.
 
-- [ ] Implement multi-factor authentication support.
+- [x] Build vault export/import functionality.
 
-- [ ] Add integration tests covering sync and MFA flows.
+- [x] Design and implement conflict resolution for syncing.
+
+- [x] Implement email multi-factor authentication support.
+
+- [x] Add integration tests covering sync and MFA flows.
+
+- [x] Allow secure export/import of a user's password bank using the user's password as the password to decrypt the zip of json files. This relates to the vault export/import functionality.
 
 ### Phase 4: Advanced Features & Production Readiness
 #### Objectives
@@ -93,6 +116,8 @@
 - Prepare for production deployment.
 
 #### Tasks
+
+- [ ] Use stronger encryption to store passwords and if possinle use MSYM/random nonce IV keys to encrypt. 
 
 - [ ] Add biometric login support on compatible devices.
 

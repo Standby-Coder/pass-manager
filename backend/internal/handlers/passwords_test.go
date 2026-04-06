@@ -2,13 +2,16 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"testing"
+	"time"
 
 	"pass-manager/backend/internal/middleware"
 	"pass-manager/backend/internal/models"
 
 	"github.com/gin-gonic/gin"
+	"github.com/golang-jwt/jwt/v5"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
@@ -21,7 +24,7 @@ func setupPasswordTestDB(t *testing.T) *gorm.DB {
 		t.Fatalf("failed to open db: %v", err)
 	}
 
-	if err := db.AutoMigrate(&models.User{}, &models.PasswordEntry{}); err != nil {
+	if err := db.AutoMigrate(&models.User{}, &models.PasswordEntry{}, &models.AppSetting{}); err != nil {
 		t.Fatalf("failed to migrate db: %v", err)
 	}
 
@@ -33,7 +36,7 @@ func authRouter(secret string, db *gorm.DB) *gin.Engine {
 	group := r.Group("/api/passwords")
 	group.Use(middleware.JWTAuth(secret))
 
-	handler := NewPasswordHandler(db)
+	handler := NewPasswordHandler(db, nil) // nil encryptor = no encryption in tests
 	group.GET("", handler.List)
 	group.POST("", handler.Create)
 	group.GET("/:id", handler.Get)
@@ -56,29 +59,30 @@ func seedUser(t *testing.T, db *gorm.DB, email string) models.User {
 	return user
 }
 
-func tokenForUser(t *testing.T, db *gorm.DB, secret string, user models.User) string {
+func createTokenFromSecret(t *testing.T, secret string, user models.User) string {
 	t.Helper()
 
-	handler := NewAuthHandler(db, struct {
-		JWTSecret string
-	}{JWTSecret: secret})
-	_ = handler
-	return ""
-}
-
-func createToken(t *testing.T, db *gorm.DB, secret string, user models.User) string {
-	t.Helper()
-
-	handler := NewAuthHandler(db, configForTests(secret))
-	token, err := handler.generateToken(user)
-	if err != nil {
-		t.Fatalf("failed to generate token: %v", err)
+	now := time.Now()
+	claims := models.UserClaims{
+		UserID: user.ID,
+		Email:  user.Email,
+		RegisteredClaims: jwt.RegisteredClaims{
+			Subject:   user.Email,
+			IssuedAt:  jwt.NewNumericDate(now),
+			ExpiresAt: jwt.NewNumericDate(now.Add(24 * time.Hour)),
+		},
 	}
-	return token
+
+	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
+	signed, err := token.SignedString([]byte(secret))
+	if err != nil {
+		t.Fatalf("failed to sign token: %v", err)
+	}
+	return signed
 }
 
-func configForTests(secret string) interface{ JWTSecret string } {
-	return struct{ JWTSecret string }{JWTSecret: secret}
+func uintToString(id uint) string {
+	return fmt.Sprintf("%d", id)
 }
 
 func TestPasswordHandlerAuthRequired(t *testing.T) {
@@ -204,5 +208,77 @@ func TestPasswordHandlerValidationPaths(t *testing.T) {
 	missing := performJSONRequest(r, http.MethodGet, "/api/passwords/999", nil, map[string]string{"Authorization": "Bearer " + token})
 	if missing.Code != http.StatusNotFound {
 		t.Fatalf("expected 404, got %d", missing.Code)
+	}
+}
+
+func TestPasswordHandlerSearchFilter(t *testing.T) {
+	gin.SetMode(gin.TestMode)
+	db := setupPasswordTestDB(t)
+	user := seedUser(t, db, "search@example.com")
+	secret := "test-secret"
+	r := authRouter(secret, db)
+	token := createTokenFromSecret(t, secret, user)
+	authHeader := map[string]string{"Authorization": "Bearer " + token}
+
+	// Create entries
+	performJSONRequest(r, http.MethodPost, "/api/passwords", gin.H{
+		"title": "GitHub", "username": "dev", "password": "pass1", "category": "work",
+	}, authHeader)
+	performJSONRequest(r, http.MethodPost, "/api/passwords", gin.H{
+		"title": "Netflix", "username": "user", "password": "pass2", "category": "personal",
+	}, authHeader)
+	performJSONRequest(r, http.MethodPost, "/api/passwords", gin.H{
+		"title": "GitLab", "username": "dev", "password": "pass3", "category": "work",
+	}, authHeader)
+
+	// Search by title
+	searchResp := performJSONRequest(r, http.MethodGet, "/api/passwords?search=git", nil, authHeader)
+	if searchResp.Code != http.StatusOK {
+		t.Fatalf("expected 200, got %d", searchResp.Code)
+	}
+	var searchResult struct {
+		Entries []models.PasswordEntry `json:"entries"`
+	}
+	json.Unmarshal(searchResp.Body.Bytes(), &searchResult)
+	if len(searchResult.Entries) != 2 {
+		t.Fatalf("expected 2 entries matching 'git', got %d", len(searchResult.Entries))
+	}
+
+	// Filter by category
+	catResp := performJSONRequest(r, http.MethodGet, "/api/passwords?category=personal", nil, authHeader)
+	if catResp.Code != http.StatusOK {
+		t.Fatalf("expected 200, got %d", catResp.Code)
+	}
+	var catResult struct {
+		Entries []models.PasswordEntry `json:"entries"`
+	}
+	json.Unmarshal(catResp.Body.Bytes(), &catResult)
+	if len(catResult.Entries) != 1 {
+		t.Fatalf("expected 1 entry for category 'personal', got %d", len(catResult.Entries))
+	}
+	if catResult.Entries[0].Title != "Netflix" {
+		t.Fatalf("expected Netflix, got %s", catResult.Entries[0].Title)
+	}
+}
+
+func TestPasswordHandlerInputLengthValidation(t *testing.T) {
+	gin.SetMode(gin.TestMode)
+	db := setupPasswordTestDB(t)
+	user := seedUser(t, db, "length@example.com")
+	secret := "test-secret"
+	r := authRouter(secret, db)
+	token := createTokenFromSecret(t, secret, user)
+	authHeader := map[string]string{"Authorization": "Bearer " + token}
+
+	// Title too long (>255)
+	longTitle := make([]byte, 256)
+	for i := range longTitle {
+		longTitle[i] = 'a'
+	}
+	resp := performJSONRequest(r, http.MethodPost, "/api/passwords", gin.H{
+		"title": string(longTitle), "password": "test",
+	}, authHeader)
+	if resp.Code != http.StatusBadRequest {
+		t.Fatalf("expected 400 for long title, got %d", resp.Code)
 	}
 }
