@@ -7,14 +7,6 @@ frontend/dist/
 backend/pass-manager.exe
 backend/cmd/server/pass-manager.exe
 
-# Database
-*.db
-
-# Test artifacts
-frontend/test-results/
-frontend/playwright-results.json
-frontend/results.txt
-
 # IDE
 .idea/
 .vscode/

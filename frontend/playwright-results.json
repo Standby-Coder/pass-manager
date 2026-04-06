@@ -1,0 +1,1751 @@
+﻿{
+  "config": {
+    "configFile": "C:\\personal code\\pass-manager\\frontend\\playwright.config.js",
+    "rootDir": "C:/personal code/pass-manager/frontend/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/personal code/pass-manager/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/personal code/pass-manager/frontend/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.59.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "app.spec.js",
+      "file": "app.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Health & Page Load",
+          "file": "app.spec.js",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "backend health endpoint returns ok",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 59,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:31.793Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-4e89303045be84d16f12",
+              "file": "app.spec.js",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "frontend loads and shows login form",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1397,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:31.878Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-3c3d7d98c332ea405283",
+              "file": "app.spec.js",
+              "line": 18,
+              "column": 3
+            },
+            {
+              "title": "service worker registers",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 636,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:33.713Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-f2b44146efaa80236902",
+              "file": "app.spec.js",
+              "line": 26,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Registration",
+          "file": "app.spec.js",
+          "line": 38,
+          "column": 6,
+          "specs": [
+            {
+              "title": "register with valid credentials succeeds",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1853,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:34.381Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-3868d71bfc21c284f59f",
+              "file": "app.spec.js",
+              "line": 39,
+              "column": 3
+            },
+            {
+              "title": "register with short password shows error",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1149,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:36.263Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-47dcd4ea28d6252df0fd",
+              "file": "app.spec.js",
+              "line": 50,
+              "column": 3
+            },
+            {
+              "title": "register with duplicate email shows error",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1604,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:37.442Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-4b065f7b91bbdd0eb1bb",
+              "file": "app.spec.js",
+              "line": 60,
+              "column": 3
+            },
+            {
+              "title": "register with invalid email shows error",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 23,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:39.068Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-0dc93f28dfffdb1995d7",
+              "file": "app.spec.js",
+              "line": 82,
+              "column": 3
+            },
+            {
+              "title": "password strength meter reacts to input",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 942,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:39.108Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-6739f269ae96f3be723f",
+              "file": "app.spec.js",
+              "line": 91,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Login",
+          "file": "app.spec.js",
+          "line": 105,
+          "column": 6,
+          "specs": [
+            {
+              "title": "login with correct credentials succeeds",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1258,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:40.072Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-543e8831f61b5cfdabfc",
+              "file": "app.spec.js",
+              "line": 115,
+              "column": 3
+            },
+            {
+              "title": "login with wrong password shows error",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1020,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:41.577Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-11e563662e51fa1ee8be",
+              "file": "app.spec.js",
+              "line": 123,
+              "column": 3
+            },
+            {
+              "title": "login with non-existent email shows error",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1096,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:42.618Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-21ef8077e7b268d24ae9",
+              "file": "app.spec.js",
+              "line": 131,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Password Vault",
+          "file": "app.spec.js",
+          "line": 142,
+          "column": 6,
+          "specs": [
+            {
+              "title": "create new entry and see it in vault",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1512,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:43.741Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-ab95d8e966edba45c781",
+              "file": "app.spec.js",
+              "line": 158,
+              "column": 3
+            },
+            {
+              "title": "edit an existing entry",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2171,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:45.272Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-cb4b51dfcd0ae019a726",
+              "file": "app.spec.js",
+              "line": 176,
+              "column": 3
+            },
+            {
+              "title": "delete an entry",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1869,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:47.473Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-927eb705369abab5ec5d",
+              "file": "app.spec.js",
+              "line": 197,
+              "column": 3
+            },
+            {
+              "title": "search filters entries",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3665,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:49.368Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-63a0354dc5d8c49a5225",
+              "file": "app.spec.js",
+              "line": 211,
+              "column": 3
+            },
+            {
+              "title": "show/hide password toggle works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1132,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:53.055Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-2b137d472124e60c87da",
+              "file": "app.spec.js",
+              "line": 231,
+              "column": 3
+            },
+            {
+              "title": "generate password button works",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2513,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:54.201Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-0cde13f2fdc87a1d6239",
+              "file": "app.spec.js",
+              "line": 245,
+              "column": 3
+            },
+            {
+              "title": "category filter works",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30268,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                            "column": 25,
+                            "line": 262
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.form-grid input[type=\"text\"]').nth(3)\u001b[22m\n\n\n  260 |     // Fill category\n  261 |     const categoryInput = page.locator('.form-grid input[type=\"text\"]').nth(3);\n> 262 |     await categoryInput.fill('Work');\n      |                         ^\n  263 |     await page.getByRole('button', { name: 'Save Entry' }).click();\n  264 |     await page.waitForTimeout(500);\n  265 |\n    at C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js:262:25"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:53:56.727Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-Password-Vault-category-filter-works-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-Password-Vault-category-filter-works-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-Password-Vault-category-filter-works-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-a8d1f1d733cd049856c5",
+              "file": "app.spec.js",
+              "line": 254,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Session Management",
+          "file": "app.spec.js",
+          "line": 281,
+          "column": 6,
+          "specs": [
+            {
+              "title": "logout clears session and shows login",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2131,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:54:28.577Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-eb8038f55a58961bdd38",
+              "file": "app.spec.js",
+              "line": 282,
+              "column": 3
+            },
+            {
+              "title": "accessing app with expired/invalid token shows login",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 980,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:54:31.082Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-79cd1c9d63e5682fcd3b",
+              "file": "app.spec.js",
+              "line": 298,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Password Reset",
+          "file": "app.spec.js",
+          "line": 311,
+          "column": 6,
+          "specs": [
+            {
+              "title": "reset password flow shows correct forms",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 657,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:54:32.079Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-746b394f934d09d15fb7",
+              "file": "app.spec.js",
+              "line": 312,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Authenticated Tabs",
+          "file": "app.spec.js",
+          "line": 322,
+          "column": 6,
+          "specs": [
+            {
+              "title": "vault tab is active by default",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1218,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:54:32.773Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-9c7195b04224420b40dd",
+              "file": "app.spec.js",
+              "line": 337,
+              "column": 3
+            },
+            {
+              "title": "export/import tab shows forms",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1316,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Export Vault')\nExpected: visible\nError: strict mode violation: getByText('Export Vault') resolved to 2 elements:\n    1) <h2>Export Vault</h2> aka getByRole('heading', { name: 'Export Vault' })\n    2) <button type=\"submit\" class=\"primary-button\">Export Vault</button> aka getByRole('button', { name: 'Export Vault' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Export Vault')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Export Vault')\nExpected: visible\nError: strict mode violation: getByText('Export Vault') resolved to 2 elements:\n    1) <h2>Export Vault</h2> aka getByRole('heading', { name: 'Export Vault' })\n    2) <button type=\"submit\" class=\"primary-button\">Export Vault</button> aka getByRole('button', { name: 'Export Vault' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Export Vault')\u001b[22m\n\n    at C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js:343:50",
+                        "location": {
+                          "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                          "column": 50,
+                          "line": 343
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 341 |\u001b[39m   test(\u001b[32m'export/import tab shows forms'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 342 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Export / Import'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 343 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'Export Vault'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 344 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'Import Vault'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 345 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 346 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                            "column": 50,
+                            "line": 343
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Export Vault')\nExpected: visible\nError: strict mode violation: getByText('Export Vault') resolved to 2 elements:\n    1) <h2>Export Vault</h2> aka getByRole('heading', { name: 'Export Vault' })\n    2) <button type=\"submit\" class=\"primary-button\">Export Vault</button> aka getByRole('button', { name: 'Export Vault' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Export Vault')\u001b[22m\n\n\n  341 |   test('export/import tab shows forms', async ({ page }) => {\n  342 |     await page.getByRole('button', { name: 'Export / Import' }).click();\n> 343 |     await expect(page.getByText('Export Vault')).toBeVisible();\n      |                                                  ^\n  344 |     await expect(page.getByText('Import Vault')).toBeVisible();\n  345 |   });\n  346 |\n    at C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js:343:50"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:54:34.011Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-Authenticated-Tabs-export-import-tab-shows-forms-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-Authenticated-Tabs-export-import-tab-shows-forms-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-Authenticated-Tabs-export-import-tab-shows-forms-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                        "column": 50,
+                        "line": 343
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-f246bbe3ef03b8f67542",
+              "file": "app.spec.js",
+              "line": 341,
+              "column": 3
+            },
+            {
+              "title": "MFA tab shows status",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2317,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:54:37.116Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-8a29289b9509bfec360a",
+              "file": "app.spec.js",
+              "line": 347,
+              "column": 3
+            },
+            {
+              "title": "admin tab visible for first user (admin)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6158,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Admin' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Admin' })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Admin' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Admin' })\u001b[22m\n\n    at C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js:355:63",
+                        "location": {
+                          "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                          "column": 63,
+                          "line": 355
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 353 |\u001b[39m   test(\u001b[32m'admin tab visible for first user (admin)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 354 |\u001b[39m     \u001b[90m// First registered user should be admin\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 355 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Admin'\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 356 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 357 |\u001b[39m\n \u001b[90m 358 |\u001b[39m   test(\u001b[32m'admin tab shows settings and users'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                            "column": 63,
+                            "line": 355
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Admin' })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Admin' })\u001b[22m\n\n\n  353 |   test('admin tab visible for first user (admin)', async ({ page }) => {\n  354 |     // First registered user should be admin\n> 355 |     await expect(page.getByRole('button', { name: 'Admin' })).toBeVisible();\n      |                                                               ^\n  356 |   });\n  357 |\n  358 |   test('admin tab shows settings and users', async ({ page }) => {\n    at C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js:355:63"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:54:39.859Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-Authenticated-Tabs-adm-be197-sible-for-first-user-admin--chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-Authenticated-Tabs-adm-be197-sible-for-first-user-admin--chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-Authenticated-Tabs-adm-be197-sible-for-first-user-admin--chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                        "column": 63,
+                        "line": 355
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-fa53de4017ecbf2f30ca",
+              "file": "app.spec.js",
+              "line": 353,
+              "column": 3
+            },
+            {
+              "title": "admin tab shows settings and users",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30234,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                            "column": 55,
+                            "line": 359
+                          },
+                          "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Admin' })\u001b[22m\n\n\n  357 |     await expect(page.getByRole('heading', { name: 'Export Vault' })).toBeVisible();\n  358 |     await expect(page.getByRole('heading', { name: 'Import Vault' })).toBeVisible();\n> 359 |   });\n      |                ^\n  360 |\n  361 |   test('MFA tab shows status', async ({ page }) => {\n  362 |     await page.getByRole('button', { name: 'MFA' }).click();\n    at C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js:359:55"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:54:47.453Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-Authenticated-Tabs-admin-tab-shows-settings-and-users-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-Authenticated-Tabs-admin-tab-shows-settings-and-users-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-Authenticated-Tabs-admin-tab-shows-settings-and-users-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-31808b38f7e7af7e1cbd",
+              "file": "app.spec.js",
+              "line": 358,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Export & Import",
+          "file": "app.spec.js",
+          "line": 367,
+          "column": 6,
+          "specs": [
+            {
+              "title": "export vault with correct password works",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 825,
+                      "error": {
+                        "message": "Error: apiRequestContext.post: connect ECONNREFUSED 127.0.0.1:8080\nCall log:\n\u001b[2m  - ΓåÆ POST http://127.0.0.1:8080/api/auth/register\u001b[22m\n\u001b[2m    - user-agent: Playwright/1.59.1 (x64; windows 10.0) node/24.14\u001b[22m\n\u001b[2m    - accept: */*\u001b[22m\n\u001b[2m    - accept-encoding: gzip,deflate,br\u001b[22m\n\u001b[2m    - content-type: application/json\u001b[22m\n\u001b[2m    - content-length: 67\u001b[22m\n",
+                        "stack": "Error: apiRequestContext.post: connect ECONNREFUSED 127.0.0.1:8080\nCall log:\n\u001b[2m  - ΓåÆ POST http://127.0.0.1:8080/api/auth/register\u001b[22m\n\u001b[2m    - user-agent: Playwright/1.59.1 (x64; windows 10.0) node/24.14\u001b[22m\n\u001b[2m    - accept: */*\u001b[22m\n\u001b[2m    - accept-encoding: gzip,deflate,br\u001b[22m\n\u001b[2m    - content-type: application/json\u001b[22m\n\u001b[2m    - content-length: 67\u001b[22m\n\n    at C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js:370:31",
+                        "location": {
+                          "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                          "column": 31,
+                          "line": 370
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 368 |\u001b[39m     \u001b[90m// Login as admin user (first registered user)\u001b[39m\n \u001b[90m 369 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Logout'\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 370 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByLabel(\u001b[32m'Email'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[33mADMIN_EMAIL\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 371 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByLabel(\u001b[32m'Password'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[33mTEST_PASSWORD\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 372 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'button'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'Login'\u001b[39m })\u001b[33m.\u001b[39mlast()\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 373 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'New Password Entry'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                            "column": 31,
+                            "line": 370
+                          },
+                          "message": "Error: apiRequestContext.post: connect ECONNREFUSED 127.0.0.1:8080\nCall log:\n\u001b[2m  - ΓåÆ POST http://127.0.0.1:8080/api/auth/register\u001b[22m\n\u001b[2m    - user-agent: Playwright/1.59.1 (x64; windows 10.0) node/24.14\u001b[22m\n\u001b[2m    - accept: */*\u001b[22m\n\u001b[2m    - accept-encoding: gzip,deflate,br\u001b[22m\n\u001b[2m    - content-type: application/json\u001b[22m\n\u001b[2m    - content-length: 67\u001b[22m\n\n\n  368 |     // Login as admin user (first registered user)\n  369 |     await page.getByRole('button', { name: 'Logout' }).click();\n> 370 |     await page.getByLabel('Email').fill(ADMIN_EMAIL);\n      |                               ^\n  371 |     await page.getByLabel('Password').fill(TEST_PASSWORD);\n  372 |     await page.getByRole('button', { name: 'Login' }).last().click();\n  373 |     await expect(page.getByText('New Password Entry')).toBeVisible({ timeout: 10000 });\n    at C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js:370:31"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:55:19.477Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-Export-Import-export-vault-with-correct-password-works-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-Export-Import-export-vault-with-correct-password-works-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-Export-Import-export-vault-with-correct-password-works-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                        "column": 31,
+                        "line": 370
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-d91cf00fd4d852219932",
+              "file": "app.spec.js",
+              "line": 368,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "API Contracts",
+          "file": "app.spec.js",
+          "line": 404,
+          "column": 6,
+          "specs": [
+            {
+              "title": "register returns correct shape",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 103,
+                      "error": {
+                        "message": "Error: apiRequestContext.post: connect ECONNREFUSED 127.0.0.1:8080\nCall log:\n\u001b[2m  - ΓåÆ POST http://127.0.0.1:8080/api/auth/register\u001b[22m\n\u001b[2m    - user-agent: Playwright/1.59.1 (x64; windows 10.0) node/24.14\u001b[22m\n\u001b[2m    - accept: */*\u001b[22m\n\u001b[2m    - accept-encoding: gzip,deflate,br\u001b[22m\n\u001b[2m    - content-type: application/json\u001b[22m\n\u001b[2m    - content-length: 67\u001b[22m\n",
+                        "stack": "Error: apiRequestContext.post: connect ECONNREFUSED 127.0.0.1:8080\nCall log:\n\u001b[2m  - ΓåÆ POST http://127.0.0.1:8080/api/auth/register\u001b[22m\n\u001b[2m    - user-agent: Playwright/1.59.1 (x64; windows 10.0) node/24.14\u001b[22m\n\u001b[2m    - accept: */*\u001b[22m\n\u001b[2m    - accept-encoding: gzip,deflate,br\u001b[22m\n\u001b[2m    - content-type: application/json\u001b[22m\n\u001b[2m    - content-length: 67\u001b[22m\n\n    at C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js:406:31",
+                        "location": {
+                          "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                          "column": 31,
+                          "line": 406
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 404 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 405 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 406 |\u001b[39m     \u001b[90m// Login via UI\u001b[39m\n \u001b[90m     |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 407 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 408 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByLabel(\u001b[32m'Email'\u001b[39m)\u001b[33m.\u001b[39mfill(email)\u001b[33m;\u001b[39m\n \u001b[90m 409 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByLabel(\u001b[32m'Password'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[33mTEST_PASSWORD\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                            "column": 31,
+                            "line": 406
+                          },
+                          "message": "Error: apiRequestContext.post: connect ECONNREFUSED 127.0.0.1:8080\nCall log:\n\u001b[2m  - ΓåÆ POST http://127.0.0.1:8080/api/auth/register\u001b[22m\n\u001b[2m    - user-agent: Playwright/1.59.1 (x64; windows 10.0) node/24.14\u001b[22m\n\u001b[2m    - accept: */*\u001b[22m\n\u001b[2m    - accept-encoding: gzip,deflate,br\u001b[22m\n\u001b[2m    - content-type: application/json\u001b[22m\n\u001b[2m    - content-length: 67\u001b[22m\n\n\n  404 |     });\n  405 |\n> 406 |     // Login via UI\n      |                              ^\n  407 |     await page.goto('/');\n  408 |     await page.getByLabel('Email').fill(email);\n  409 |     await page.getByLabel('Password').fill(TEST_PASSWORD);\n    at C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js:406:31"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:55:23.263Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-API-Contracts-register-returns-correct-shape-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-API-Contracts-register-returns-correct-shape-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                        "column": 31,
+                        "line": 406
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-6883e85fb076089b4d76",
+              "file": "app.spec.js",
+              "line": 405,
+              "column": 3
+            },
+            {
+              "title": "login returns correct shape",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 252,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:55:24.823Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-3b5a43b7d8d194d6b47b",
+              "file": "app.spec.js",
+              "line": 417,
+              "column": 3
+            },
+            {
+              "title": "password CRUD returns correct shapes",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 187,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveProperty\u001b[2m(\u001b[22m\u001b[32mpath\u001b[39m\u001b[2m)\u001b[22m\n\nExpected path: \u001b[32m\"entry\"\u001b[39m\nReceived path: \u001b[31m[]\u001b[39m\n\nReceived value: \u001b[31m{\"category\": \"Cat\", \"created_at\": \"2026-04-06T16:25:25.2305773+05:30\", \"id\": 1, \"notes\": \"\", \"password\": \"p123\", \"sync_version\": 1, \"title\": \"Test\", \"updated_at\": \"2026-04-06T16:25:25.2305773+05:30\", \"url\": \"\", \"user_id\": 2, \"username\": \"u\"}\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveProperty\u001b[2m(\u001b[22m\u001b[32mpath\u001b[39m\u001b[2m)\u001b[22m\n\nExpected path: \u001b[32m\"entry\"\u001b[39m\nReceived path: \u001b[31m[]\u001b[39m\n\nReceived value: \u001b[31m{\"category\": \"Cat\", \"created_at\": \"2026-04-06T16:25:25.2305773+05:30\", \"id\": 1, \"notes\": \"\", \"password\": \"p123\", \"sync_version\": 1, \"title\": \"Test\", \"updated_at\": \"2026-04-06T16:25:25.2305773+05:30\", \"url\": \"\", \"user_id\": 2, \"username\": \"u\"}\u001b[39m\n    at C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js:446:21",
+                        "location": {
+                          "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                          "column": 21,
+                          "line": 446
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 444 |\u001b[39m     \u001b[36mawait\u001b[39m request\u001b[33m.\u001b[39mpost(\u001b[32m`${API}/api/auth/register`\u001b[39m\u001b[33m,\u001b[39m {\n \u001b[90m 445 |\u001b[39m       data\u001b[33m:\u001b[39m { email\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m \u001b[33mTEST_PASSWORD\u001b[39m }\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 446 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 447 |\u001b[39m     \u001b[36mconst\u001b[39m res \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m request\u001b[33m.\u001b[39mpost(\u001b[32m`${API}/api/auth/login`\u001b[39m\u001b[33m,\u001b[39m {\n \u001b[90m 448 |\u001b[39m       data\u001b[33m:\u001b[39m { email\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m \u001b[33mTEST_PASSWORD\u001b[39m }\u001b[33m,\u001b[39m\n \u001b[90m 449 |\u001b[39m     })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                            "column": 21,
+                            "line": 446
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoHaveProperty\u001b[2m(\u001b[22m\u001b[32mpath\u001b[39m\u001b[2m)\u001b[22m\n\nExpected path: \u001b[32m\"entry\"\u001b[39m\nReceived path: \u001b[31m[]\u001b[39m\n\nReceived value: \u001b[31m{\"category\": \"Cat\", \"created_at\": \"2026-04-06T16:25:25.2305773+05:30\", \"id\": 1, \"notes\": \"\", \"password\": \"p123\", \"sync_version\": 1, \"title\": \"Test\", \"updated_at\": \"2026-04-06T16:25:25.2305773+05:30\", \"url\": \"\", \"user_id\": 2, \"username\": \"u\"}\u001b[39m\n\n  444 |     await request.post(`${API}/api/auth/register`, {\n  445 |       data: { email, password: TEST_PASSWORD },\n> 446 |     });\n      |                  ^\n  447 |     const res = await request.post(`${API}/api/auth/login`, {\n  448 |       data: { email, password: TEST_PASSWORD },\n  449 |     });\n    at C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js:446:21"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:55:25.101Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-API-Contracts-password-CRUD-returns-correct-shapes-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-API-Contracts-password-CRUD-returns-correct-shapes-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                        "column": 21,
+                        "line": 446
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-f76dacbc44160752a68e",
+              "file": "app.spec.js",
+              "line": 431,
+              "column": 3
+            },
+            {
+              "title": "sync endpoint returns correct shape",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 165,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:55:26.674Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-a10981814b1f4361166f",
+              "file": "app.spec.js",
+              "line": 481,
+              "column": 3
+            },
+            {
+              "title": "security policy endpoint returns correct shape",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 22,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:55:26.865Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-55edc2581bb8d217cf6d",
+              "file": "app.spec.js",
+              "line": 499,
+              "column": 3
+            },
+            {
+              "title": "unauthenticated requests to protected routes return 401",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 52,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:55:26.903Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-2d50fa524110b157b0c1",
+              "file": "app.spec.js",
+              "line": 508,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "MFA Flow",
+          "file": "app.spec.js",
+          "line": 528,
+          "column": 6,
+          "specs": [
+            {
+              "title": "enable and verify MFA via API",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 234,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m404\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m404\u001b[39m\n    at C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js:550:33",
+                        "location": {
+                          "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                          "column": 33,
+                          "line": 550
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 548 |\u001b[39m         \u001b[33m:\u001b[39m \u001b[36mawait\u001b[39m request\u001b[33m.\u001b[39mpost(ep\u001b[33m.\u001b[39murl\u001b[33m,\u001b[39m { data\u001b[33m:\u001b[39m {} })\u001b[33m;\u001b[39m\n \u001b[90m 549 |\u001b[39m       expect(res\u001b[33m.\u001b[39mstatus()\u001b[33m,\u001b[39m \u001b[32m`${ep.method} ${ep.url}`\u001b[39m)\u001b[33m.\u001b[39mtoBe(\u001b[35m401\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 550 |\u001b[39m     }\n \u001b[90m     |\u001b[39m      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 551 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 552 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 553 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                            "column": 33,
+                            "line": 550
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m404\u001b[39m\n\n  548 |         : await request.post(ep.url, { data: {} });\n  549 |       expect(res.status(), `${ep.method} ${ep.url}`).toBe(401);\n> 550 |     }\n      |      ^\n  551 |   });\n  552 | });\n  553 |\n    at C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js:550:33"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:55:26.977Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-MFA-Flow-enable-and-verify-MFA-via-API-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-MFA-Flow-enable-and-verify-MFA-via-API-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                        "column": 33,
+                        "line": 550
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-2a21177b30667d9bbdcd",
+              "file": "app.spec.js",
+              "line": 529,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Admin Access",
+          "file": "app.spec.js",
+          "line": 573,
+          "column": 6,
+          "specs": [
+            {
+              "title": "non-admin cannot access admin endpoints",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 262,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:55:29.177Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-2f4bc097754263c00c02",
+              "file": "app.spec.js",
+              "line": 574,
+              "column": 3
+            },
+            {
+              "title": "admin can access admin endpoints",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 179,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m403\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m403\u001b[39m\n    at C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js:604:31",
+                        "location": {
+                          "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                          "column": 31,
+                          "line": 604
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 602 |\u001b[39m   test(\u001b[32m'non-admin cannot access admin endpoints'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ request }) \u001b[33m=>\u001b[39m {\n \u001b[90m 603 |\u001b[39m     \u001b[90m// Register a non-admin user (admin was already registered in beforeAll)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 604 |\u001b[39m     \u001b[36mconst\u001b[39m email2 \u001b[33m=\u001b[39m uniqueEmail()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 605 |\u001b[39m     \u001b[36mconst\u001b[39m res \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m request\u001b[33m.\u001b[39mpost(\u001b[32m`${API}/api/auth/register`\u001b[39m\u001b[33m,\u001b[39m {\n \u001b[90m 606 |\u001b[39m       data\u001b[33m:\u001b[39m { email\u001b[33m:\u001b[39m email2\u001b[33m,\u001b[39m password\u001b[33m:\u001b[39m \u001b[33mTEST_PASSWORD\u001b[39m }\u001b[33m,\u001b[39m\n \u001b[90m 607 |\u001b[39m     })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                            "column": 31,
+                            "line": 604
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m403\u001b[39m\n\n  602 |   test('non-admin cannot access admin endpoints', async ({ request }) => {\n  603 |     // Register a non-admin user (admin was already registered in beforeAll)\n> 604 |     const email2 = uniqueEmail();\n      |                               ^\n  605 |     const res = await request.post(`${API}/api/auth/register`, {\n  606 |       data: { email: email2, password: TEST_PASSWORD },\n  607 |     });\n    at C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js:604:31"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:55:29.464Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-Admin-Access-admin-can-access-admin-endpoints-chromium\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\personal code\\pass-manager\\frontend\\test-results\\app-Admin-Access-admin-can-access-admin-endpoints-chromium\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\personal code\\pass-manager\\frontend\\e2e\\app.spec.js",
+                        "column": 31,
+                        "line": 604
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-73810880ed3c7cf8f7be",
+              "file": "app.spec.js",
+              "line": 593,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "Export/Import API",
+          "file": "app.spec.js",
+          "line": 610,
+          "column": 6,
+          "specs": [
+            {
+              "title": "export and import round-trip preserves data",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 555,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-04-06T10:55:31.243Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a510cc93a867214a2ea0-30da11af5f7a1d9ecbbf",
+              "file": "app.spec.js",
+              "line": 611,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-04-06T10:53:30.134Z",
+    "duration": 121717.294,
+    "expected": 28,
+    "skipped": 0,
+    "unexpected": 9,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,4 @@
+﻿
+Running 37 tests using 1 worker
+
+[1A[2K[1/37] [chromium] ΓÇ║ e2e\app.spec.js:11:3 ΓÇ║ Health & Page Load ΓÇ║ backend health endpoint returns ok
